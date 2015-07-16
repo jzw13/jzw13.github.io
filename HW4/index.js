@@ -10,6 +10,8 @@ window.onscroll = function(){
 }
 
 
+
+
 //放大
 
 	$(document).on('click','.popup',function(){
@@ -90,9 +92,10 @@ function InsertPhotoGrid()
 }
 
 
-
+current_latitude = 40;
+current_longitude = 116;
 //獲取距離
-/*function getDistance(){
+function getDistance(){
 	debugger;
 	var info = document.getElementsByClassName('info');
 	for(i = 0 ; i < info.length ; i++){
@@ -108,7 +111,7 @@ function InsertPhotoGrid()
 		info[i].innerHTML = '<p>這張圖片距離您 ' + dist +' 公里!</p>';
 	}
 
-}*/
+}
 
 //獲取當前位置
 function showPosition(pos){
@@ -144,8 +147,7 @@ function getLocation(){
 
 function showComment1()
 {
-	debugger;
-	$.getJSON("http://jzw13.github.io/HW4/ext/comment_dialog.json",function(data)
+	$.getJSON(".ext/comment_dialog.json",function(data)
 		var comments = data.comments;
 		for(i = 0 ; i < comments.length ;i++)
 		{
