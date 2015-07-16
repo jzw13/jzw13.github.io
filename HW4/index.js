@@ -97,12 +97,13 @@ current_longitude = 116;
 //獲取距離
 function getDistance(){
 	debugger;
-	var info = document.getElementsByClassName('info');
+	$.getJSON("ext/location.json",function(data)
+		var locations = data.location;)
 	for(i = 0 ; i < info.length ; i++){
 		var StartNS = current_latitude / 180 * Math.PI;
 		var StartEW = current_longitude / 180 * Math.PI;
-		var StopNS = location[i].latitude / 180 * Math.PI;
-		var StopEW = location[i].longitude / 180 * Math.PI;
+		var StopNS = locations[i].latitude / 180 * Math.PI;
+		var StopEW = locations[i].longitude / 180 * Math.PI;
 		var EarthR = 6371;
 
 		var dist= Math.acos(Math.sin(StartNS) * Math.sin(StopNS) + Math.cos(StartEW) * Math.cos(StopEW) * Math.cos(StartNS - StartEW)) * EarthR;
@@ -147,7 +148,7 @@ function getLocation(){
 
 /*function showComment1()
 {
-	$.getJSON(".ext/comment_dialog.json",function(data)
+	$.getJSON("ext/comment_dialog.json",function(data)
 		var comments = data.comments;
 		for(i = 0 ; i < comments.length ;i++)
 		{
