@@ -6,12 +6,10 @@ body{
 	overflow-x:hidden;
 }
 
-a{
-	color:#35BFFF;
-}
 
-a:hover,a:active{
-	color:#91DCFF;
+
+.pic-grid:hover,a:active{
+	box-shadow: 0 10px 25px rgba(255,0,0,0.4);
 }
 
 .clearfix{
@@ -62,6 +60,7 @@ a:hover,a:active{
 	display:block;
 	cursor:pointer;
 	border-radius: 1%;
+
 }
 
 .pic-grid img
@@ -127,6 +126,9 @@ a:hover,a:active{
 	border-radius: 1.5%;
 	z-index:9997;
 	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	overflow-y:scroll;
 
 }
-
+.Comment{
+	font-size:14px;
+}

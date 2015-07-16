@@ -9,25 +9,23 @@ window.onscroll = function(){
 	}
 }
 
+
 //放大
-$(function(){
-	var bigImg= '';
-	var _index=0;
-	$(".popup").click(function(){
+
+	$(document).on('click','.popup',function(){
 		$(".show").hide();
 		$(this).hide();
 		$(".comment-container").hide();
-	});
-	$(".pic-grid img").click(function()
-	{
+	})
+	$(document).on('click','.pic-grid img',function()
+	{	
+		bigImg='';
 		$(".popup").show();
 		$(".show").show();
 		$(".comment-container").show();
 		bigImg = $(this).attr("src");
 		$(".show img.big").attr("src",bigImg);
-		_index = $(this).index();
-	});
-})
+	})
 
 //返回頁頂
 $(function(){
@@ -46,19 +44,24 @@ $(function(){
  });
 
 var maxPics = 200;
-var pics = 40;
+var pics = 14;
 
 //載入圖片格
 function AddPhotoGrid(elem)
 {
 	if(pics >= maxPics)
-		return;
+				return;
 	var order = (++pics) % 40 + 1;
-	document.getElementById(elem).innerHTML+=(
-		'<li class="pic-grid">'+
-		'<div class="info"></div>'+
-		'<img src="img/' + order +'.jpg"' + ' alt="Pic' + order +'">' +
-		'</li>');
+	var li = document.createElement("li");
+	li.setAttribute("class","pic-grid");
+
+	var photo = document.createElement("img");
+	photo.src = "img/" + order +".jpg";
+	photo.alt = "pic"+ order;
+
+	li.appendChild(photo);
+	document.getElementById(elem).appendChild(li);
+
 }
 
 //將圖片格插入Column中
@@ -72,15 +75,16 @@ function InsertPhotoGrid()
 		if(ulgrids[i].clientHeight > containerHeight)
 			containerHeight = ulgrids[i].clientHeight;
 	}
-	for(i = 0 ; i < 4 ; i++)
-	{
-		while(ulgrids[i].clientHeight < containerHeight - 200)
-		{
-			if(pics >= maxPics)
-				return;
-			AddPhotoGrid("ul"+ (i + 1));
-		}
-	}
+			for(i = 0 ; i < 4 ; i++)
+			{
+			while(ulgrids[i].clientHeight < containerHeight - 200)
+			{
+				if(pics >= maxPics)
+					return;
+				AddPhotoGrid("ul"+ (i + 1));
+				}
+			}
+	
 }
 
 
