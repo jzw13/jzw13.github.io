@@ -99,7 +99,7 @@ function getDistance(){
 	$.getJSON("http://jzw13.github.io/HW4/ext/location.json",function(data){
 		debugger;
 		var locs = data.location;
-		for(i = 0 ; i < info.length ; i++){
+		for(i = 0 ; i < locs.length ; i++){
 			var StartNS = current_latitude / 180 * Math.PI;
 			var StartEW = current_longitude / 180 * Math.PI;
 			var StopNS = locs[i].latitude / 180 * Math.PI;
