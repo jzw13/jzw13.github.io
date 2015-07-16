@@ -145,7 +145,7 @@ function getLocation(){
 	}
 }
 
-function showComment1()
+/*function showComment1()
 {
 	$.getJSON(".ext/comment_dialog.json",function(data)
 		var comments = data.comments;
@@ -155,5 +155,5 @@ function showComment1()
 			$(.comment-container).append(commentdata);
 		}
 		)
-}
+}*/
 
