@@ -92,7 +92,7 @@ function InsertPhotoGrid()
 
 
 //獲取距離
-function getDistance(){
+/*function getDistance(){
 	debugger;
 	var info = document.getElementsByClassName('info');
 	for(i = 0 ; i < info.length ; i++){
@@ -108,7 +108,7 @@ function getDistance(){
 		info[i].innerHTML = '<p>這張圖片距離您 ' + dist +' 公里!</p>';
 	}
 
-}
+}*/
 
 //獲取當前位置
 function showPosition(pos){
@@ -142,5 +142,15 @@ function getLocation(){
 	}
 }
 
-
+function showComment1()
+{
+	$.getJSON(".ext/comment_dialog.json",function(data)
+		var comments = data.comments;
+		for(i = 0 ; i < comments.length ;i++)
+		{
+			var commentdata = ("<p><h2>"+comments[i].user+"</h2><p>"+comments[i].comment+"</p>");
+			$(.comment-container).append(commentdata);
+		}
+		)
+}
 
