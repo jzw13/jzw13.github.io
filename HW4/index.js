@@ -125,7 +125,7 @@ function getDistance(){
 function showComment1()
 {	
 	$.getJSON("http://jzw13.github.io/HW4/ext/comment_dialog.json",function(data){
-		var comments = data.comments;
+		var comments = data.review;
 		debugger;
 		for(i = 0 ; i < comments.length ;i++)
 		{
