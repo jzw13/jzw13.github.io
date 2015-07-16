@@ -105,8 +105,15 @@ function getDistance(){
 			var StopEW = locs[i].longitude / 180 * Math.PI;
 			var EarthR = 6371;
 
+
 			var dist= Math.acos(Math.sin(StartNS) * Math.sin(StopNS) + Math.cos(StartEW) * Math.cos(StopEW) * Math.cos(StartNS - StartEW)) * EarthR;
 			dist = parseInt(dist);
+
+
+
+			var dist= Math.acos(Math.sin(StartNS) * Math.sin(StopNS) + Math.cos(StartEW) * Math.cos(StopEW) * Math.cos(StartNS - StartEW)) * EarthR;
+			dist = parseInt(dist);
+
 
 		info[i].innerHTML = '<p>這張圖片距離您 ' +  +' 公里!</p>';}})
 
@@ -125,8 +132,5 @@ function showComment1()
 			$(".comment-container").append(commentdata);
 		}
 		})
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> e23f8b4432a133d2761c50b15a69a436eab90ed5
+
