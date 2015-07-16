@@ -115,7 +115,8 @@ function getDistance(){
 			dist = parseInt(dist);
 
 
-		info[i].innerHTML = '<p>這張圖片距離您 ' +  +' 公里!</p>';}})
+			var locdata = ("<h3>您距離此圖 "+ dist+"公里</h3></p>");
+			$(".comment-container").append(locdata);}})
 
 }
 
@@ -129,7 +130,7 @@ function showComment1()
 		debugger;
 		for(i = 0 ; i < com.length ;i++)
 		{
-			var commentdata = ("<p><h2>"+com[i].user+"</h2><p>"+com[i].review+"</p>");
+			var commentdata = ("<p><h2>"+com[i].author+"</h2><p>"+com[i].review+"</p>");
 			$(".comment-container").append(commentdata);
 		}
 		})
