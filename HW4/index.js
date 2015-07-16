@@ -121,8 +121,7 @@ function showComment1()
 		var comments = data.comments;
 		for(i = 0 ; i < comments.length ;i++)
 		{
-			var commentdata = ("<p><h2>"+comments[i].user+"</h2><p>"+comments[i].comment+"</p>");
-			$(".comment-container").after(commentdata);
+			$(".comment-container").after("<p><h2>"+comments[i].user+"</h2><p>"+comments[i].comment+"</p>");
 		}
 		})
 }
