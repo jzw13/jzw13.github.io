@@ -95,9 +95,9 @@ function InsertPhotoGrid()
 current_latitude = 40;
 current_longitude = 116;
 //獲取距離
-function getDistance(){
+function getDistance(){		
+	debugger;
 	$.getJSON("http://jzw13.github.io/HW4/ext/location.json",function(data){
-		debugger;
 		var locs = data.location;
 		for(i = 0 ; i < locs.length ; i++){
 			var StartNS = current_latitude / 180 * Math.PI;
