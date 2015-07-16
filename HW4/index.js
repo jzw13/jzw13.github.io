@@ -91,6 +91,7 @@ function InsertPhotoGrid()
 
 //獲取距離
 function getDistance(){
+	debugger;
 	var info = document.getElementsByClassName('info');
 	for(i = 0 ; i < info.length ; i++){
 		var StartNS = current_latitude / 180 * Math.PI;
@@ -108,15 +109,30 @@ function getDistance(){
 }
 
 //獲取當前位置
-function showLocation(pos){
-	current_longitude = pos.coords.latitude;
+function showPosition(pos){
+	current_longitude = position.coords.latitude;
 	current_latitude = position.coords.longtitude;
 }
 
-function getLocation(){
-	if(navigator.geolocation)
+function errorHandler(err)
+{
+	if(err.code==1)
 	{
-		navigator.goolocation.getCurrentPosition(showPosition);		
+		alert("Error! Access is denied.");
+	}
+	else if(err.code == 2)
+	{
+		alert("Error! Position is unavailable.")
+	}
+
+}
+
+function getLocation(){
+	debugger;
+	if(navigator.geolocation)
+	{	
+		var op = {timeout:60000};
+		navigator.geolocation.getCurrentPosition(showPosition,errorHandler,op);		
 	}
 	else 
 	{
