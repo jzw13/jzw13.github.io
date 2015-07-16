@@ -97,6 +97,7 @@ current_longitude = 116;
 //獲取距離
 function getDistance(){
 	$.getJSON("http://jzw13.github.io/HW4/ext/location.json",function(data){
+		debugger;
 		var locs = data.location;
 		for(i = 0 ; i < info.length ; i++){
 			var StartNS = current_latitude / 180 * Math.PI;
@@ -116,7 +117,8 @@ function getDistance(){
 
 
 			var locdata = ("<h3>您距離此圖 "+ dist+"公里</h3></p>");
-			$(".comment-container").append(locdata);}})
+			$(".comment-container").append(locdata);}
+		})
 
 }
 
@@ -127,7 +129,6 @@ function showComment1()
 {	
 	$.getJSON("http://jzw13.github.io/HW4/ext/comment_dialog.json",function(data){
 		var com = data.comments;
-		debugger;
 		for(i = 0 ; i < com.length ;i++)
 		{
 			var commentdata = ("<p><h2>"+com[i].author+"</h2><p>"+com[i].review+"</p>");
