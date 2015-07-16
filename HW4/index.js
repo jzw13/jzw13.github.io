@@ -125,11 +125,11 @@ function getDistance(){
 function showComment1()
 {	
 	$.getJSON("http://jzw13.github.io/HW4/ext/comment_dialog.json",function(data){
-		var comments = data.comments;
+		var com = data.comments;
 		debugger;
 		for(i = 0 ; i < comments.length ;i++)
 		{
-			var commentdata = ("<p><h2>"+comments[i].user+"</h2><p>"+comments[i].comment+"</p>");
+			var commentdata = ("<p><h2>"+com[i].user+"</h2><p>"+com[i].comment+"</p>");
 			$(".comment-container").append(commentdata);
 		}
 		})
