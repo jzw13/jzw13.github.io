@@ -110,14 +110,8 @@ function getDistance(){
 			var dist= Math.acos(Math.sin(StartNS) * Math.sin(StopNS) + Math.cos(StartEW) * Math.cos(StopEW) * Math.cos(StartNS - StartEW)) * EarthR;
 			dist = parseInt(dist);
 
-
-
-			var dist= Math.acos(Math.sin(StartNS) * Math.sin(StopNS) + Math.cos(StartEW) * Math.cos(StopEW) * Math.cos(StartNS - StartEW)) * EarthR;
-			dist = parseInt(dist);
-
-
 			var locdata = ("<h3>您距離此圖 "+ dist+"公里</h3></p>");
-			$(".comment-container").append(locdata);}
+			$(".comment-container").before(locdata);}
 		})
 
 }
