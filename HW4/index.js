@@ -58,8 +58,10 @@ function AddPhotoGrid(elem)
 	var photo = document.createElement("img");
 	photo.src = "img/" + order +".jpg";
 	photo.alt = "pic"+ order;
+	var info = document.createElement("info");
 
 	li.appendChild(photo);
+	li.appendChild(info);
 	document.getElementById(elem).appendChild(li);
 
 }
@@ -96,7 +98,7 @@ function getDistance(){
 	for(i = 0 ; i < info.length ; i++){
 		var StartNS = current_latitude / 180 * Math.PI;
 		var StartEW = current_longitude / 180 * Math.PI;
-		var StopNS = location[i].latitude / 180 * Math.Pi;
+		var StopNS = location[i].latitude / 180 * Math.PI;
 		var StopEW = location[i].longitude / 180 * Math.PI;
 		var EarthR = 6371;
 
