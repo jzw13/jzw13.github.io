@@ -95,11 +95,11 @@ function InsertPhotoGrid()
 current_latitude = 40;
 current_longitude = 116;
 //獲取距離
-function getDistance(){		
-	debugger;
+function getDistance(){
 	$.getJSON("http://jzw13.github.io/HW4/ext/location.json",function(data){
+		debugger;
 		var locs = data.location;
-		for(i = 0 ; i < locs.length ; i++){
+		for(i = 0 ; i < info.length ; i++){
 			var StartNS = current_latitude / 180 * Math.PI;
 			var StartEW = current_longitude / 180 * Math.PI;
 			var StopNS = locs[i].latitude / 180 * Math.PI;
@@ -111,7 +111,7 @@ function getDistance(){
 			dist = parseInt(dist);
 
 			var locdata = ("<h3>您距離此圖 "+ dist+"公里</h3></p>");
-			$(".comment-container").before(locdata);}
+			$(".info").append(locdata);}
 		})
 
 }
