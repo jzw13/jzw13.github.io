@@ -96,65 +96,33 @@ current_latitude = 40;
 current_longitude = 116;
 //獲取距離
 function getDistance(){
-	debugger;
-	$.getJSON("http://jzw13.github.io/HW4/ext/location.json",function(data)
-		var locations = data.location;)
-	for(i = 0 ; i < info.length ; i++){
-		var StartNS = current_latitude / 180 * Math.PI;
-		var StartEW = current_longitude / 180 * Math.PI;
-		var StopNS = locations[i].latitude / 180 * Math.PI;
-		var StopEW = locations[i].longitude / 180 * Math.PI;
-		var EarthR = 6371;
+	$.getJSON("ext/location.json",function(data){
+		var locs = data.location;
+		for(i = 0 ; i < info.length ; i++){
+			var StartNS = current_latitude / 180 * Math.PI;
+			var StartEW = current_longitude / 180 * Math.PI;
+			var StopNS = locs[i].latitude / 180 * Math.PI;
+			var StopEW = locs[i].longitude / 180 * Math.PI;
+			var EarthR = 6371;
 
-		var dist= Math.acos(Math.sin(StartNS) * Math.sin(StopNS) + Math.cos(StartEW) * Math.cos(StopEW) * Math.cos(StartNS - StartEW)) * EarthR;
-		dist = parseInt(dist);
+			var dist= Math.acos(Math.sin(StartNS) * Math.sin(StopNS) + Math.cos(StartEW) * Math.cos(StopEW) * Math.cos(StartNS - StartEW)) * EarthR;
+			dist = parseInt(dist);
 
-		info[i].innerHTML = '<p>這張圖片距離您 ' + dist +' 公里!</p>';
-	}
+		info[i].innerHTML = '<p>這張圖片距離您 ' +  +' 公里!</p>';}})
 
 }
 
 //獲取當前位置
-function showPosition(pos){
-	current_longitude = position.coords.latitude;
-	current_latitude = position.coords.longtitude;
-}
 
-function errorHandler(err)
+
+function showComment1()
 {
-	if(err.code==1)
-	{
-		alert("Error! Access is denied.");
-	}
-	else if(err.code == 2)
-	{
-		alert("Error! Position is unavailable.")
-	}
-
-}
-
-function getLocation(){
-	debugger;
-	if(navigator.geolocation)
-	{	
-		var op = {timeout:60000};
-		navigator.geolocation.getCurrentPosition(showPosition,errorHandler,op);		
-	}
-	else 
-	{
-		alert("Oops!Something goes wrong!");
-	}
-}
-
-/*function showComment1()
-{
-	$.getJSON("http://jzw13.github.io/HW4/ext/comment_dialog.json",function(data)
+	$.getJSON("ext/comment_dialog.json",function(data){
 		var comments = data.comments;
 		for(i = 0 ; i < comments.length ;i++)
 		{
 			var commentdata = ("<p><h2>"+comments[i].user+"</h2><p>"+comments[i].comment+"</p>");
-			$(.comment-container).append(commentdata);
+			$(".comment-container").append(commentdata);
 		}
-		)
-}*/
-
+		})
+}
