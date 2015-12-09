@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>步数信息</title>
+
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/color.css" rel="stylesheet">
+    <link href="./css/round.css" rel="stylesheet">
+    <link href="./css/backimg.css" rel="stylesheet"/>
+</head>
+<body style="background-image:url(./img/header.jpg)">
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div class="container" style="width:94%;">
+        
+        <div class="row intro-tables" id="line_chart" style="">
+            <h1 class="box" style="height:auto;color:white;text-align:center;font-size:5em">步数情况</h1>
+            <div class="col-xs-12 col-sm-12 box" id="main" style="height:500px;background-image:url(./img/table-1.jpg)"></div>
+
+            <div class="col-xs-12 col-sm-12 box" style="background-image:url(./img/table-3.jpg);padding-left:25%;padding-right:10%">
+                <h2 style="font-size:2em">今日步数</h2>
+                <div class="round" style="text-align:center;font-family:'Microsoft YaHei UI';">
+                    <p id="data_today">
+                        10000
+                    </p>
+                </div>
+
+                <h2 style="font-size:2em">目标步数</h2>
+                <div class="round" style="background-color:pink;text-align:center;font-family:'Microsoft YaHei UI';position:relative;top:10px">
+                    <p id="data_goal">
+                        9900
+                    </p>
+                </div>
+
+                <h2 style="font-size:2em">差距步数</h2>
+                <div class="round" style="background-color:lightgreen;text-align:center;font-family:'Microsoft YaHei UI';position:relative;top:10px">
+                    <p id="P1">100</p>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 box" style="font-family:'Microsoft YaHei UI';color:wheat;font-size:4em;background-image:url(./img/table-2.jpg)">
+                <h2 style="font-size:1em">运动建议</h2>
+                <p style="white-space:normal" id="data_suggestion">干的不错，继续努力</p>
+            </div>
+
+        </div>
+
+            
+
+    </div>
+
+    <!-- js文件引入 -->
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.js"></script>
+
+    <!-- ECharts单文件引入 -->
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <script type="text/javascript">
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+        
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/line' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main')); 
+                
+                var option = {
+    title : {
+        text: '近一周每日步数',
+        textStyle: {
+            fontSize:25
+        }
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['步数']
+    },
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ['周一','周二','周三','周四','周五','周六','周日'],
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    fontSize: 30,
+                }
+            }
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            axisLabel: {
+                show:true,
+                textStyle: {
+                    fontSize: 25,
+                }
+            }
+        }
+    ],
+    grid : [
+        {
+            color : {
+                backgroundColor : '#F00',
+                borderColor : '#FF0'
+            }
+        }
+    ],
+    series : [
+        {
+            name:'当日步数',
+            type: 'line',
+            itemstyle: {
+                normal: {
+                    lineStyle: {
+                        color: 'lightblue',
+                        width: 10
+                    }
+                }
+            },
+            data:[8000, 5000, 4000, 6500, 5000, 9000, 10000],
+            markPoint: {
+                symbolSize: 100,
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+            markLine : {
+                data : [
+                    {
+                        type: 'average',
+                        name: '平均值',
+                    }
+                ],
+                itemStyle: {
+                    normal: {
+                        label: {
+                            textStyle: {
+                                fontSize:25
+                            },
+                        },
+                    },
+                    emphasis: {
+                        label: {
+                            textStyle: {
+                                fontSize: 25
+                            },
+                        },
+                    },
+                },
+            }
+        }
+    ]
+};
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
+            }
+        );
+    </script>
+</body>
