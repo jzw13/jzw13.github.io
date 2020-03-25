@@ -1,0 +1,419 @@
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+body {
+    font-family: 'lihei-pro';
+    src: url('src/fonts/lihei-pro.ttf');
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.head h1 {
+    text-align: center;
+}
+
+.h5 {
+    font-weight: bold;
+    font-size: 10px;
+    text-align: center;
+}
+
+.head p {
+    text-align: center;
+    letter-spacing: 10px;
+}
+
+.btn- {
+    color: black;
+    letter-spacing: 10px;
+    border: 5px solid;
+    border-radius: 0;
+}
+
+
+label {
+    background-color: white;
+    color: black;
+    font-size: 24px;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+textarea {
+    outline: none;
+    border: none;
+}
+
+textarea:focus,
+input:focus {
+    border-color: transparent !important;
+}
+
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+input:focus:-moz-placeholder {
+    color: transparent;
+}
+
+input:focus::-moz-placeholder {
+    color: transparent;
+}
+
+input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+textarea:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+textarea:focus:-moz-placeholder {
+    color: transparent;
+}
+
+textarea:focus::-moz-placeholder {
+    color: transparent;
+}
+
+textarea:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+input::-webkit-input-placeholder {
+    color: #555555;
+}
+
+input:-moz-placeholder {
+    color: #555555;
+}
+
+input::-moz-placeholder {
+    color: #555555;
+}
+
+input:-ms-input-placeholder {
+    color: #555555;
+}
+
+textarea::-webkit-input-placeholder {
+    color: #555555;
+}
+
+textarea:-moz-placeholder {
+    color: #555555;
+}
+
+textarea::-moz-placeholder {
+    color: #555555;
+}
+
+textarea:-ms-input-placeholder {
+    color: #555555;
+}
+
+.title-label {
+    color: black;
+    font-weight: bold;
+    font-size: 28px;
+    letter-spacing: 8px;
+    padding-bottom: 10px;
+    width: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    padding: 0px 10px;
+}
+
+
+.thanks {
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.btn.submit {
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    align: center;
+}
+
+.submit {
+    align: center;
+}
+
+.group-gender {
+    width: 15%;
+}
+
+/*------------------------------------------------------------------
+[ Input ]*/
+
+.wrap-input100 {
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid #d9d9d9;
+    padding-bottom: 13px;
+    margin-bottom: 65px;
+}
+
+.rs1-wrap-input100 {
+    width: calc(100% - 60%);
+}
+
+.label-input100 {
+    font-size: 20px;
+    color: #FFF;
+    line-height: 1.5;
+    padding-left: 5px;
+}
+
+.input-group>.form-control {
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.2;
+    padding: 0 5px;
+}
+
+
+.input100 {
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-size: 18px;
+    color: #A06135;
+    line-height: 1.2;
+    padding: 0 5px;
+}
+
+.focus-input100 {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.focus-input100::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+
+    background: #A06135;
+}
+
+
+/*---------------------------------------------*/
+input.input100 {
+    height: 40px;
+}
+
+
+textarea.input100 {
+    min-height: 110px;
+    padding-top: 9px;
+    padding-bottom: 13px;
+}
+
+
+.input100:focus+.focus-input100::before {
+    width: 100%;
+}
+
+.has-val.input100+.focus-input100::before {
+    width: 100%;
+}
+
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-contact100-form-btn {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -25px;
+    align: center;
+}
+
+.contact100-form-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 50px;
+    background-color: #FFF;
+
+    font-size: 16px;
+    color: #000;
+    line-height: 1.2;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+
+}
+
+
+.contact100-form-btn:hover {
+    background-color: #000;
+    box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -moz-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -webkit-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -o-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -ms-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+}
+
+/*------------------------------------------------------------------
+[ Button ]*/
+
+.delivery-button-btn {
+    font-size: 16px;
+    line-height: 1.2;
+    align-items: center;
+    background: transparent;
+    color: #FFF;
+    border-radius: 0;
+    border: 2px solid;
+    text-align: center;
+    letter-spacing: 10px;
+}
+
+.delivery-button-btn.active{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+    align-items: center;
+    background: white;
+    color:black;
+    border-radius: 0;
+    border: 2px solid;
+    text-align: center;
+    letter-spacing: 10px;
+
+}
+
+.btn-gender {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+    align-items: center;
+    background: transparent;
+    color: #FFF;
+    border-radius: 0;
+    border: 2px solid;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+.btn-gender.active{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+    align-items: center;
+    background: white;
+    color:black;
+    border-radius: 0;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+.input-group-append{
+
+}
+
+.contact100-form-btn:hover {
+    background-color: #000;
+    color:#FFF;
+    box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -moz-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -webkit-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -o-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -ms-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+}
+
+
+.btn-group-vertical {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:12px;
+    margin-bottom: 10px;
+}
+
+.btn-group-vertical>button {
+    margin-bottom: 10px;
+}
+
+
+.title-label-span {
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    font-size: 20px;
+}
+
+.logo-img {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+}
+
+.add-new-columns{
+	margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:10px;
+    margin-bottom:10px;
+
+}
