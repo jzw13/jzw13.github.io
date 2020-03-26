@@ -417,3 +417,10 @@ textarea.input100 {
     margin-bottom:10px;
 
 }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 1%;
+  margin-left: 1%;
+}
