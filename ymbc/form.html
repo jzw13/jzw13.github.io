@@ -12,7 +12,6 @@
 </head>
 <script src="https://www.google.com/recaptcha/api.js?render=_reCAPTCHA_site_key"></script>
 <script type="text/javascript" src="src/js/jquery.twzipcode.min.js"></script>
-
 <script>
     grecaptcha.ready(function() {
     grecaptcha.execute('_reCAPTCHA_site_key_', {action: 'homepage'}).then(function(token) {
@@ -26,7 +25,7 @@
             <img class="logo-img" src="src/logo.png" style="width:90%"></img>
             <p>商品訂購表單</p>
         </div>
-        <form action="">
+        <form action="" id="order-item">
             <div class="row item-row">
                 <div class="col-12 bg-white title-label mh-100">訂購</div>
             </div>
@@ -44,7 +43,7 @@
                 </div>
             </div>
             <div class="add-new-columns">
-                    <i class="fas fa-plus-square add-items" type="button" sytle="color:white;"></i>
+                <i class="fas fa-plus-square add-items" type="button" sytle="color:white;"></i>
             </div>
             <div class="row">
                 <div class="col-12 bg-white title-label mh-100">購買人</div>
@@ -129,11 +128,16 @@
                 <textarea class="input100" name="message" placeholder="Your message here..."></textarea>
                 <span class="focus-input100"></span>
             </div>
-            <footer class="container-contact100-form-btn">
-                <button class="contact100-form-btn">
-                    <span>完成 送出</span>
-                </button>
-            </footer>
+            <div class="cart-concern-btm-fixed four-column" id="cart1" style="display: table;">
+            <div class="concern-cart">
+                <a id="payAttention">
+                    <span>合計NT$ 300</span>
+                </a>
+            </div>
+            <div class="action-list">
+                <a type="button" id="submit-btn" class="red-color" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">完成送出</a>
+            </div>
+        </div>
         </form>
         <div style="height:20px"></div>
         <div class="row">
@@ -145,9 +149,10 @@
         </div>
         <div style="height:20px"></div>
         <div class="thanks">
-            <h5>THANK YOU SO MUCH FOR YOUR ORDER</h5>
+            <h5>THANK YOU SO MUCH </br>FOR YOUR ORDER</h5>
             <p>感謝你的支持與喜愛 願上帝賜福於您</p>
         </div>
+        <div style="height:60px"></div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -165,14 +170,21 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function(){
-  var additems= '<select class="col-10 form-control form-control-md"><i class="fas fa-minus-square remove-items" type="button" sytle="color:black;"></i><option>🖍 YMBC & SRBC CHURCH | 原子筆組 - $49</option><option>🔖 PRAY TO JESUS | 高級防水防曬貼 - $100</option><option>🧧 主旨必成 - 七珍珠 | 紅包袋 - $70</option><option>🥛 CUP OVERFLOWING 福杯滿溢 | 雙層玻璃杯 - $499</option><option>☂️ 恩予恩雨 | 三折手開傘 - $499</option></select><div class="col-2 product-quantity md"><input type="number" value="1" min="1" max="9" class="form-control" style="color:black;"></div>';
-  $('.add-items').click(function(){
-    $('.cart-list').append(additems);
-  })
+$(document).ready(function() {
+    $('#submit-btn').click(function() {
+        $('#order-item').submit();
+    });
+});
+
+$(document).ready(function() {
+    var additems = '<select class="col-10 form-control form-control-md"><i class="fas fa-minus-square remove-items" type="button" sytle="color:black;"></i><option>🖍 YMBC & SRBC CHURCH | 原子筆組 - $49</option><option>🔖 PRAY TO JESUS | 高級防水防曬貼 - $100</option><option>🧧 主旨必成 - 七珍珠 | 紅包袋 - $70</option><option>🥛 CUP OVERFLOWING 福杯滿溢 | 雙層玻璃杯 - $499</option><option>☂️ 恩予恩雨 | 三折手開傘 - $499</option></select><div class="col-2 product-quantity md"><input type="number" value="1" min="1" max="9" class="form-control" style="color:black;"></div>';
+    $('.add-items').click(function() {
+        $('.cart-list').append(additems);
+    })
 })
 
-
+$("#mobile-submit-btn").css("bottom", 0);
+$("#mobile-submit-btn").css("position", "fixed");
 </script>
 
 </html>
