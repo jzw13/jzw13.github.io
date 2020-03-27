@@ -275,40 +275,28 @@ textarea.input100 {
     align: center;
 }
 
-.contact100-form-btn {
+#mobile-submit-btn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
+    justify-content: right;
+    align-items: right;
     margin-right: auto;
-    padding: 0 20px;
-    min-width: 160px;
+    margin-left: auto;
     height: 50px;
     background-color: #FFF;
-
     font-size: 16px;
     color: #000;
     line-height: 1.2;
 
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
-
 }
 
 
-.contact100-form-btn:hover {
+#mobile-submit-btn:hover {
     background-color: #000;
-    box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
-    -moz-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
-    -webkit-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
-    -o-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
-    -ms-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    font-color:#FFF;
 }
 
 /*------------------------------------------------------------------
@@ -443,6 +431,7 @@ textarea.input100 {
     border-radius: 0;
     border: 2px solid;
     text-align: center;
+    font-size:12px;
 }
 
 .form-qty{
@@ -453,3 +442,78 @@ textarea.input100 {
     border: 2px solid;
     text-align: center;
 }
+
+.cart-concern-btm-fixed { 
+    bottom: 0; 
+    height: 50px; 
+    left: 0; 
+    position: fixed; 
+    text-align: center; 
+    width: 100%; 
+    z-index: 10; 
+} 
+ 
+.four-column .concern-cart { 
+    width: 50%; 
+} 
+.concern-cart { 
+    background-color: rgba(0, 0, 0, 0.8); 
+} 
+.concern-cart, .action-list { 
+    float: left; 
+} 
+ 
+.concern-cart a { 
+    color: #d4d4d4; 
+    font-size: 10px; 
+} 
+.concern-cart a, .action-list a { 
+    width: 100%; 
+} 
+.concern-cart a, .action-list a { 
+    display: inline-block; 
+    float: left; 
+    height: 50px; 
+    line-height: 50px; 
+} 
+ 
+.focus-container { 
+    display: inline-block; 
+    text-align: center; 
+    width: 40px; 
+} 
+ 
+.focus-container .focus-icon { 
+    margin-bottom: -18px; 
+    text-align: center; 
+} 
+ 
+.focus-out { 
+    background-position: 0 0; 
+    display: inline-block; 
+    height: 19px; 
+    width: 21px; 
+} 
+ 
+.concern-cart a span { 
+    display: block; 
+    height: 18px; 
+    font-size:24px;
+    text-align: center; 
+} 
+.cart-car-icn .btm-act-icn { 
+    background-position: 0 -23px; 
+    background-size: 50px 50px; 
+} 
+ 
+.four-column .action-list { 
+    width: 50%; 
+} 
+ 
+.action-list a { 
+    color: #fff; 
+    font-size: 15px; 
+} 
+.red-color { 
+    background-color: #A06135; 
+} 
