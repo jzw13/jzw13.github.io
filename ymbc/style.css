@@ -6,6 +6,18 @@ body {
     src: url('src/fonts/lihei-pro.ttf');
 }
 
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+.footer,
+.push {
+  height: 50px;
+}
+
 /*/////////////////////////////////////////////////////////////////*/
 
 body {
@@ -45,6 +57,10 @@ label {
 input {
     outline: none;
     border: none;
+}
+
+input .form-control{
+	width:75%;
 }
 
 textarea {
@@ -253,15 +269,9 @@ textarea.input100 {
 [ Button ]*/
 .container-contact100-form-btn {
     width: 100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -25px;
+    height:100%;
+    overflow-y: scroll
+    -webkit-overflow-scrolling: touch
     align: center;
 }
 
@@ -423,4 +433,23 @@ textarea.input100 {
   flex-wrap: wrap;
   margin-right: 1%;
   margin-left: 1%;
+}
+
+
+.form-control{
+    align-items: center;
+    background: transparent;
+    color: #FFF;
+    border-radius: 0;
+    border: 2px solid;
+    text-align: center;
+}
+
+.form-qty{
+	align-items: center;
+    background: transparent;
+    color: #FFF;
+    border-color: #FFF;
+    border: 2px solid;
+    text-align: center;
 }
