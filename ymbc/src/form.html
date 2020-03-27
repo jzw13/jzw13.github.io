@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>GOD'S VESSEL | 商品訂購表單</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    </link>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="https://www.google.com/recaptcha/api.js?render=_reCAPTCHA_site_key"></script>
+<script type="text/javascript" src="src/js/jquery.twzipcode.min.js"></script>
+<script>
+    grecaptcha.ready(function() {
+    grecaptcha.execute('_reCAPTCHA_site_key_', {action: 'homepage'}).then(function(token) {
+      });
+  });
+</script>
+
+<body>
+    <div class="container">
+        <div class="head" id="head">
+            <img class="logo-img" src="src/logo.png" style="width:90%"></img>
+            <p>商品訂購表單</p>
+        </div>
+        <form action="" id="order-item">
+            <div class="row item-row">
+                <div class="col-12 bg-white title-label mh-100">訂購</div>
+            </div>
+            <div style="height:10px;"></div>
+            <div class="row cart-list">
+                <select class="col-10 form-control form-control-md">
+                    <option>🖍 YMBC & SRBC CHURCH | 原子筆組 - $49</option>
+                    <option>🔖 PRAY TO JESUS | 高級防水防曬貼 - $100</option>
+                    <option>🧧 主旨必成 - 七珍珠 | 紅包袋 - $70</option>
+                    <option>🥛 CUP OVERFLOWING 福杯滿溢 | 雙層玻璃杯 - $499</option>
+                    <option>☂️ 恩予恩雨 | 三折手開傘 - $499</option>
+                </select>
+                <div class="col-2 product-quantity md" style="width=75%;">
+                    <input type="number" value="1" min="1" max="9" class="form-control form-qty" style="color:black;" required>
+                </div>
+            </div>
+            <div class="add-new-columns">
+                <i class="fas fa-plus-square add-items" type="button" sytle="color:white;"></i>
+            </div>
+            <div class="row">
+                <div class="col-12 bg-white title-label mh-100">購買人</div>
+            </div>
+            <span class="label-input100">姓名 </span>
+            <div class="row wrap-input100 validate-input">
+                <input class="input100" type="text" name="name" style="width:65%;" required>
+                <span class="focus-input100" style="left-margin:10px;"></span>
+                <div class="input-group-append" id="yourGender" style="width:25%">
+                    <button class="btn btn-gender active" type="button">女士</button>
+                    <button class="btn btn-gender" type="button">先生</button>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="wrap-input100 validate-input" data-validate="Phone number is required" required>
+                    <span class="label-input100">電話</span>
+                    <input class="input100" type="phone" name="phone" placeholder="0988111999" required>
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="EMail is required">
+                    <span class="label-input100">電子郵件</span>
+                    <input class="input100" type="email" name="email" placeholder="ymbc1234@gmail.com" required>
+                    <span class="focus-input100"></span>
+                </div>
+            </div>
+            <div class="row bg-white">
+                <div class="col-10  title-label mh-100">郵寄方式</div>
+                <button class="col-2" type="button" data-toggle="modal" data-target="#exampleModalLong">
+                    <i class="fas fa-truck-moving fa-spin" style="color:black;"></i>
+                </button>
+            </div>
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle" style="color:black">郵資說明</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="color:black;">
+                            > 【 消費滿 NT$ 1,200 免運 】<br>
+                            > 【 郵局宅配 】 本島 80 元 / 外島 120 元<br>
+                            > 【 7-11店到店 】 本島 60 元 / 外島 100 元<br>
+                            > 【 全家店到店 】 本島 60 元 / 外島 100 元<br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group-vertical delivery-btn-group" id="deliveryMethod">
+                <button type="button" class="col-md-5 btn delivery-button-btn active">郵寄宅配</button>
+                <div class="w-100"></div>
+                <button type="button" class="col-md-5 btn delivery-button-btn">7-11 店到店</button>
+                <div class="w-100"></div>
+                <button type="button" class="col-md-5 btn delivery-button-btn">全家 店到店</button>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col wrap-input100 col-5 validate-input" data-validate="縣市">
+                        <span class="label-input100">縣市</span>
+                        <input class="input100" type="text" name="city" placeholder="台北市" required>
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col wrap-input100 col-5 validate-input" data-validate="鄉鎮市區">
+                        <span class="label-input100">鄉鎮市區</span>
+                        <input class="input100" type="text" name="region" placeholder="士林區" required>
+                        <span class="focus-input100"></span>
+                    </div>
+                </div>
+                <div class="wrap-input100 validate-input">
+                    <span class="label-input100">門市/地址</span>
+                    <input class="input100" type="text" name="address" required>
+                    <span class="focus-input100"></span>
+                </div>
+            </div>
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100">想對我們說...</span>
+                <textarea class="input100" name="message" placeholder="Your message here..."></textarea>
+                <span class="focus-input100"></span>
+            </div>
+            <div class="cart-concern-btm-fixed four-column" id="cart1" style="display: table;">
+            <div class="concern-cart">
+                <a id="payAttention">
+                    <span>合計NT$ 300</span>
+                </a>
+            </div>
+            <div class="action-list">
+                <a type="button" id="submit-btn" class="red-color" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">完成送出</a>
+            </div>
+        </div>
+        </form>
+        <div style="height:20px"></div>
+        <div class="row">
+            <div class="col-12 bg-white title-label mh-100" style="text-align:center;">
+                請確實填妥以上內容<br>
+                我們收到匯款後<br>
+                於3日內為您寄出商品
+            </div>
+        </div>
+        <div style="height:20px"></div>
+        <div class="thanks">
+            <h5>THANK YOU SO MUCH </br>FOR YOUR ORDER</h5>
+            <p>感謝你的支持與喜愛 願上帝賜福於您</p>
+        </div>
+        <div style="height:60px"></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('.btn-gender').click(function() {
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+});
+
+
+$(document).ready(function() {
+    $('.delivery-button-btn').click(function() {
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+});
+
+$(document).ready(function() {
+    $('#submit-btn').click(function() {
+        $('#order-item').submit();
+    });
+});
+
+$(document).ready(function() {
+    var additems = '<select class="col-10 form-control form-control-md"><i class="fas fa-minus-square remove-items" type="button" sytle="color:black;"></i><option>🖍 YMBC & SRBC CHURCH | 原子筆組 - $49</option><option>🔖 PRAY TO JESUS | 高級防水防曬貼 - $100</option><option>🧧 主旨必成 - 七珍珠 | 紅包袋 - $70</option><option>🥛 CUP OVERFLOWING 福杯滿溢 | 雙層玻璃杯 - $499</option><option>☂️ 恩予恩雨 | 三折手開傘 - $499</option></select><div class="col-2 product-quantity md"><input type="number" value="1" min="1" max="9" class="form-control" style="color:black;"></div>';
+    $('.add-items').click(function() {
+        $('.cart-list').append(additems);
+    })
+})
+
+$("#mobile-submit-btn").css("bottom", 0);
+$("#mobile-submit-btn").css("position", "fixed");
+</script>
+
+</html>
