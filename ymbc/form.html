@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <script src="https://www.google.com/recaptcha/api.js?render=_reCAPTCHA_site_key"></script>
+<script type="text/javascript" src="src/js/jquery.twzipcode.min.js"></script>
+
 <script>
     grecaptcha.ready(function() {
     grecaptcha.execute('_reCAPTCHA_site_key_', {action: 'homepage'}).then(function(token) {
@@ -29,27 +31,27 @@
                 <div class="col-12 bg-white title-label mh-100">訂購</div>
             </div>
             <div style="height:10px;"></div>
-            <div class="row">
+            <div class="row cart-list">
                 <select class="col-10 form-control form-control-md">
-                    <option>YMBC & SRBC CHURCH | 原子筆組 - $120</option>
-                    <option>PRAY TO JESUS | 高級防水防曬貼 - $100</option>
-                    <option>主旨必成 - 七珍珠 | 紅包袋 - $100</option>
-                    <option>CUP OVERFLOWING 福杯滿溢 | 雙層玻璃杯 - $690</option>
-                    <option>恩予恩雨 | 三折手開傘 - $590</option>
+                    <option>🖍 YMBC & SRBC CHURCH | 原子筆組 - $49</option>
+                    <option>🔖 PRAY TO JESUS | 高級防水防曬貼 - $100</option>
+                    <option>🧧 主旨必成 - 七珍珠 | 紅包袋 - $70</option>
+                    <option>🥛 CUP OVERFLOWING 福杯滿溢 | 雙層玻璃杯 - $499</option>
+                    <option>☂️ 恩予恩雨 | 三折手開傘 - $499</option>
                 </select>
-                <div class="col-1 product-quantity md">
-                    <input type="number" value="1" min="1" max="9" class="form-control" style="color:black;">
+                <div class="col-2 product-quantity md" style="width=75%;">
+                    <input type="number" value="1" min="1" max="9" class="form-control form-qty" style="color:black;" required>
                 </div>
             </div>
             <div class="add-new-columns">
-                    <i class="fas fa-plus-square" type="button" sytle="color:white;"></i>
+                    <i class="fas fa-plus-square add-items" type="button" sytle="color:white;"></i>
             </div>
             <div class="row">
                 <div class="col-12 bg-white title-label mh-100">購買人</div>
             </div>
-            <span class="label-input100">姓名* </span>
+            <span class="label-input100">姓名 </span>
             <div class="row wrap-input100 validate-input">
-                <input class="input100" type="text" name="name" style="width:65%;">
+                <input class="input100" type="text" name="name" style="width:65%;" required>
                 <span class="focus-input100" style="left-margin:10px;"></span>
                 <div class="input-group-append" id="yourGender" style="width:25%">
                     <button class="btn btn-gender active" type="button">女士</button>
@@ -57,14 +59,14 @@
                 </div>
             </div>
             <div class="input-group">
-                <div class="wrap-input100 validate-input" data-validate="Phone number is required">
-                    <span class="label-input100">電話*</span>
-                    <input class="input100" type="phone" name="phone" placeholder="0988111999">
+                <div class="wrap-input100 validate-input" data-validate="Phone number is required" required>
+                    <span class="label-input100">電話</span>
+                    <input class="input100" type="phone" name="phone" placeholder="0988111999" required>
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="EMail is required">
-                    <span class="label-input100">電子郵件*</span>
-                    <input class="input100" type="email" name="email" placeholder="ymbc1234@gmail.com">
+                    <span class="label-input100">電子郵件</span>
+                    <input class="input100" type="email" name="email" placeholder="ymbc1234@gmail.com" required>
                     <span class="focus-input100"></span>
                 </div>
             </div>
@@ -105,33 +107,33 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col wrap-input100 col-5 validate-input" data-validate="縣市">
-                        <span class="label-input100">縣市*</span>
-                        <input class="input100" type="text" name="city" placeholder="台北市">
+                        <span class="label-input100">縣市</span>
+                        <input class="input100" type="text" name="city" placeholder="台北市" required>
                         <span class="focus-input100"></span>
                     </div>
                     <div class="col-2"></div>
                     <div class="col wrap-input100 col-5 validate-input" data-validate="鄉鎮市區">
-                        <span class="label-input100">鄉鎮市區*</span>
-                        <input class="input100" type="text" name="region" placeholder="士林區">
+                        <span class="label-input100">鄉鎮市區</span>
+                        <input class="input100" type="text" name="region" placeholder="士林區" required>
                         <span class="focus-input100"></span>
                     </div>
                 </div>
-                <div class="wrap-input100 validate-input" data-validate="EMail is required">
-                    <span class="label-input100">門市/地址*</span>
-                    <input class="input100" type="text" name="address">
+                <div class="wrap-input100 validate-input">
+                    <span class="label-input100">門市/地址</span>
+                    <input class="input100" type="text" name="address" required>
                     <span class="focus-input100"></span>
                 </div>
             </div>
-            <div class="wrap-input100 validate-input" data-validate="Message is required">
+            <div class="wrap-input100 validate-input">
                 <span class="label-input100">想對我們說...</span>
                 <textarea class="input100" name="message" placeholder="Your message here..."></textarea>
                 <span class="focus-input100"></span>
             </div>
-            <div class="container-contact100-form-btn">
+            <footer class="container-contact100-form-btn">
                 <button class="contact100-form-btn">
                     <span>完成 送出</span>
                 </button>
-            </div>
+            </footer>
         </form>
         <div style="height:20px"></div>
         <div class="row">
@@ -162,6 +164,15 @@ $(document).ready(function() {
         $(this).addClass('active').siblings().removeClass('active');
     });
 });
+
+$(document).ready(function(){
+  var additems= '<select class="col-10 form-control form-control-md"><i class="fas fa-minus-square remove-items" type="button" sytle="color:black;"></i><option>🖍 YMBC & SRBC CHURCH | 原子筆組 - $49</option><option>🔖 PRAY TO JESUS | 高級防水防曬貼 - $100</option><option>🧧 主旨必成 - 七珍珠 | 紅包袋 - $70</option><option>🥛 CUP OVERFLOWING 福杯滿溢 | 雙層玻璃杯 - $499</option><option>☂️ 恩予恩雨 | 三折手開傘 - $499</option></select><div class="col-2 product-quantity md"><input type="number" value="1" min="1" max="9" class="form-control" style="color:black;"></div>';
+  $('.add-items').click(function(){
+    $('.cart-list').append(additems);
+  })
+})
+
+
 </script>
 
 </html>
